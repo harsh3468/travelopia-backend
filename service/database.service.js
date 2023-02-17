@@ -3,13 +3,11 @@ import dotenv from "dotenv";
 dotenv.config();
 
 class DatabaseService {
-  databaseInstance = null;
 
-  /**
-   *
-   */
   constructor() {
     console.log("Database Initialized");
+
+    // INITIALIZE DB INSTANCE
     this.databaseInstance = mysql.createConnection({
       host: process.env.DB_HOST,
       port: process.env.DB_PORT,
@@ -18,10 +16,12 @@ class DatabaseService {
       database: process.env.DB_NAME,
     });
 
+    // CREATE DB CONNECTION
     this.databaseInstance.connect(function (err) {
       if (err) throw err;
       console.log("Database Connected!");
     });
+    
   }
 
   /**
