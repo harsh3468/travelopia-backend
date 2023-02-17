@@ -5,7 +5,7 @@ dotenv.config();
 class DatabaseService {
 
   constructor() {
-    console.log("Database Initialized");
+    console.log("Database Service Initialized");
 
     // INITIALIZE DB INSTANCE
     this.databaseInstance = mysql.createConnection({
@@ -19,7 +19,7 @@ class DatabaseService {
     // CREATE DB CONNECTION
     this.databaseInstance.connect(function (err) {
       if (err) throw err;
-      console.log("Database Connected!");
+      console.log("Database Service Connected!");
     });
 
   }
