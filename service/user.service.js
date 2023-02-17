@@ -15,9 +15,9 @@ class UserService {
   }
 
   /**
-   *
-   * @param {*} req
-   * @param {*} res
+   * GET BOOKING INFORMATION FOR USER
+   * @param {*} request
+   * @param {*} response
    * @returns
    */
   getUserBookingById = (request, response) => {
@@ -34,9 +34,9 @@ class UserService {
   };
 
   /**
-   *
-   * @param {*} req
-   * @param {*} res
+   * CREATE BOOKING FOR USER
+   * @param {*} request
+   * @param {*} response
    * @returns
    */
   createUserBooking = (request, response) => {
