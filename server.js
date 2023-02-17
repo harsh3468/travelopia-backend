@@ -7,7 +7,6 @@ import { databaseService } from "./service/database.service.js";
 
 export default class Server {
   app = express();
-  origins = ["http://localhost:3000"];
 
   constructor() {
     this.setupCORS();
@@ -17,20 +16,7 @@ export default class Server {
   }
 
   setupCORS() {
-    this.app.use(
-      cors({
-        origin: (origin, callback) => {
-          if (!origin || _.includes(this.origins, origin)) {
-            callback(undefined, true);
-          } else {
-            callback(new Error("Not allowed by CORS"));
-          }
-        },
-        methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-        exposedHeaders: ["Content-Disposition"],
-      })
-    );
-    this.app.options("*");
+    this.app.use(cors());
   }
 
   initGlobalMiddleware() {

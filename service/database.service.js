@@ -8,7 +8,7 @@ class DatabaseService {
     console.log("Database Service Initialized");
 
     // INITIALIZE DB INSTANCE
-    this.databaseInstance = mysql.createConnection({
+    const databaseInstance = mysql.createConnection({
       host: process.env.DB_HOST,
       port: process.env.DB_PORT,
       user: process.env.DB_USERNAME,
@@ -17,11 +17,11 @@ class DatabaseService {
     });
 
     // CREATE DB CONNECTION
-    this.databaseInstance.connect(function (err) {
+    databaseInstance.connect(function (err) {
       if (err) throw err;
       console.log("Database Service Connected!");
     });
-
+    return databaseInstance;
   }
 
   /**
