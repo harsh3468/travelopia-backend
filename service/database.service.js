@@ -21,11 +21,11 @@ class DatabaseService {
       if (err) throw err;
       console.log("Database Connected!");
     });
-    
+
   }
 
   /**
-   *
+   *INITIALIZE DB INSTANCE
    * @returns
    */
   static getDatabaseInstance() {
